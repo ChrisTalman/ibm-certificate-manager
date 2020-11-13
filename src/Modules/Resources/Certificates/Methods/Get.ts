@@ -17,7 +17,7 @@ export async function get(this: Resource, {id}: Parameters)
 			request:
 			{
 				method: 'GET',
-				path: `/certificate/${id}`,
+				path: `/v2/certificate/${encodeURIComponent(id)}`,
 				jsonResponseSuccess: true
 			}
 		}

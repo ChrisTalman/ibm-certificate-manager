@@ -28,7 +28,7 @@ export async function throwRejectionApiError <GenericResolution> (promise: Promi
 	}
 	catch (error)
 	{
-		throwApiError(error);
+		await throwApiError(error);
 		throw new Error('throwApiError() failed');
 	};
 	return result;
