@@ -7,9 +7,9 @@ declare module '@chris-talman/ibm-certificate-manager'
 	export class Client
 	{
 		public readonly region: string;
-		public readonly token: string;
+		public readonly key: string;
 		public readonly domain: Domain;
-		constructor({region, token}: {region: Client['region'], token: Client['token']});
+		constructor({region, key}: {region: Client['region'], key: Client['key']});
 		public readonly certificates: Certificates;
 	}
 
