@@ -73,7 +73,13 @@ declare module '@chris-talman/ibm-certificate-manager'
 	export class ApiError extends Error
 	{
 		public readonly message: string;
+		public readonly json?: ApiErrorJson;
 		public readonly error: RequestRawError;
 		constructor({error}: {error: RequestRawError});
+	}
+	export interface ApiErrorJson
+	{
+		code: 'DLUERR503-05';
+		message: string;
 	}
 }

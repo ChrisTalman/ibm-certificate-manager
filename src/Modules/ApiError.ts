@@ -9,12 +9,18 @@ import { API_NAME } from 'src/Constants';
 export class ApiError extends Error
 {
 	public readonly message: string;
+	public readonly json?: object;
 	public readonly error: RequestRawError;
 	constructor({error, errorText}: {error: RequestRawError, errorText: string})
 	{
 		const message = `${API_NAME} Error: ${error.response.status} ${errorText}`;
 		super(message);
 		this.error = error;
+		try
+		{
+			this.json = JSON.parse(errorText);
+		}
+		catch (error) {};
 	};
 };
 
